@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+#Variables
+IP="x.x.x.x"
+PORT="xx"
+ID_FILE="$HOME/.ssh/id_rsa_$IP"
+
+#Enable line below for a list of IPs contained in a file
+#IP=$(cat ips.lst)
+
+#Enable line below for a single IP from user input
+#read -p "Enter IP" IP
+
+#Create ssh key pair on client side
+ssh-keygen -t rsa -f "$ID_FILE" -q -b 2048 -N ""
+
+#Push public ssh key to remote server
+ssh-copy-id -i "$ID_FILE.pub" -p "$PORT" "$USER"@"$IP"
