@@ -1,0 +1,11 @@
+sudo apt-get update # update packages
+sudo apt-get dist-upgrade -y # run upgrades
+sudo apt-get install curl -y # install curl util
+
+sudo snap install --classic code # install vscode on ubuntu
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb # download chrome dpkg
+
+sudo apt install ./google-chrome-stable_current_amd64.deb # install chrome
+
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash # install Azure CLI for Debian distros
